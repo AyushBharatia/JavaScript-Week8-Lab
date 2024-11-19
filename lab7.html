@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7: HTML and CSS Basics</title>
+    <style>
+        /* Task 3: Integrating CSS */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 2em;
+            color: #333;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        li {
+            padding: 5px;
+            background-color: #ddd;
+            margin: 5px 0;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Task 2: Adding Content -->
+    <h1>Welcome to HTML and CSS Basics</h1>
+    <p>This is a simple web page demonstrating HTML, CSS, and JavaScript basics.</p>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <button id="bgButton">Change Background</button>
+    <button id="addItemButton">Add Item</button>
+
+    <script>
+        // Task 4: Adding Interactivity with JavaScript
+        function changeBackground() {
+            document.body.style.backgroundColor = "#c0c0c0";
+        }
+
+        // Attach event listener to the "Change Background" button
+        document.getElementById('bgButton').addEventListener('click', changeBackground);
+
+        // Task 5: DOM Manipulation
+        function addItem() {
+            const newItem = document.createElement('li');
+            newItem.textContent = "New Item";
+            document.querySelector('ul').appendChild(newItem);
+        }
+
+        // Attach event listener to the "Add Item" button
+        document.getElementById('addItemButton').addEventListener('click', addItem);
+    </script>
+</body>
+</html>

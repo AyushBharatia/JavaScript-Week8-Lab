@@ -1,0 +1,100 @@
+<!--
+Ayush Bharatia
+no1694782
+Oct 18th 2024
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8: Introduction to Events</title>
+    <style>
+        .hover-div {
+            border: 2px solid black;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lab 8: Introduction to Events</h1>
+
+    <!-- Task 1: Click Event -->
+    <button id="clickButton">Click Me</button>
+
+    <!-- Task 2: Mouse Events -->
+    <div id="hoverDiv" class="hover-div">Hover over me</div>
+
+    <!-- Task 3: Keyboard Events -->
+    <input id="keyInput" type="text" placeholder="Type something">
+
+    <!-- Task 4: Form Events -->
+    <form id="nameForm">
+        <input id="nameInput" type="text" placeholder="Name">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Task 5: Focus and Blur Events -->
+    <input id="focusInput" type="text" placeholder="Focus on me">
+
+    <!-- Task 6: Event Delegation -->
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <script>
+        // Task 1: Click Event
+        document.getElementById('clickButton').addEventListener('click', function() {
+            this.textContent = "Clicked!";
+        });
+
+        // Task 2: Mouse Events
+        const hoverDiv = document.getElementById('hoverDiv');
+        hoverDiv.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'lightblue';
+        });
+        hoverDiv.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';
+        });
+
+        // Task 3: Keyboard Events
+        document.getElementById('keyInput').addEventListener('keyup', function(event) {
+            console.log(`Key pressed: ${event.key}`);
+        });
+
+        // Task 4: Form Events
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const name = document.getElementById('nameInput').value;
+            console.log(`Name entered: ${name}`);
+        });
+
+        // Task 5: Focus and Blur Events
+        const focusInput = document.getElementById('focusInput');
+        focusInput.addEventListener('focus', function() {
+            this.style.borderColor = 'green';
+        });
+        focusInput.addEventListener('blur', function() {
+            this.style.borderColor = '';
+        });
+
+        // Task 6: Event Delegation
+        document.getElementById('itemList').addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                event.target.style.backgroundColor = 'lightcoral';
+            }
+        });
+    </script>
+</body>
+</html>
